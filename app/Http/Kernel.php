@@ -26,6 +26,7 @@ class Kernel extends HttpKernel
      *
      * @var array
      */
+    //注册中间件
     protected $middlewareGroups = [
         'web' => [
             \App\Http\Middleware\EncryptCookies::class,
@@ -35,6 +36,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\EnsureEmailIsVerified::class,   //注册中间件，注册用户邮件校验
         ],
 
         'api' => [
