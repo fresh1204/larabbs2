@@ -29,7 +29,7 @@ class UsersController extends Controller
 
     	//如果有图片上传
     	if($request->avatar){
-    		$result = $uploader->save($request->avatar,'avatars',$user->id);
+    		$result = $uploader->save($request->avatar,'avatars',$user->id,416);
     		//符合要求的图片
     		if($result){
     			//获取保存到数据库中的图片路径
